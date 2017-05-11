@@ -6,7 +6,7 @@ const {app} = require('./../server');
 const {Todo} = require('./../models/todo');
 
 const todoSeeds = [
-  { text: "hi", _id: new ObjectId(), completed: true, completedAT: 183290 },
+  { text: "hi", _id: new ObjectId(), completed: true, completedAt: 183290 },
   { text: "hi number two", _id: new ObjectId() },
   { text: "hi number three", _id: new ObjectId() }
 ];
