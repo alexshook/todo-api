@@ -40,3 +40,16 @@ describe("POST /todos", () => {
     })
    })
 })
+
+describe("GET /todos", () => {
+  it("should return all the todos in the db", (done) => {
+    request(app)
+      .get("/todos")
+      .expect(200)
+      .expect("Content-Type", /json/)
+      .expect((res) => {
+        expect(res.body.todos.length).toBe(todoSeeds.length);
+      })
+    .end(done);
+  })
+})

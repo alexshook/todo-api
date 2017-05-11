@@ -73,7 +73,7 @@ Restful routes a la Rails Resourceful routes map well to CRUD actions on data:
 
 -----------------
 
-`$ mongod —dbpath ~/mongo-data`
+`$ mongod --dbpath ~/mongo-data`
 
 `$ git clone git@github.com:trivett/express-todo-api-starter.git`
 
@@ -95,4 +95,5 @@ Body Parser
 
 Mongoose & object ID
 
-Code along and make a simple rest api for one type of resource. 
+Code along and make a simple rest api for one type of resource.
+
