@@ -53,3 +53,23 @@ describe("GET /todos", () => {
     .end(done);
   })
 })
+
+describe("GET /todos/:id", () => {
+  it("should return the todo", (done) => {
+    request(app)
+      .get(`/todos/${todoSeeds[0]._id.toHexString()}`)
+      .expect(200)
+      .expect("Content-Type", /json/)
+      .expect((res) => {
+        expect(res.body.todo.text).toBe(todoSeeds[0].text);
+      })
+    .end(done);
+  });
+
+  it("should return 404 in an invalid mongo id", (done) => {
+    request(app)
+      .get(`/todos/${todoSeeds[0]._id.toHexString().replace("5", "6")}`)
+      .expect(404)
+      .end(done);
+  });
+})
