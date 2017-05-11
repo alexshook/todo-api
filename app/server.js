@@ -15,12 +15,25 @@ const app = express();
 /////////MIDDLEWARE//////////////
 ////////////////////////////////
 
+app.use(bodyParser.json());
 
 ////////////////////////////////
 ////////////ROUTES//////////////
 ////////////////////////////////
 
 // CREATE
+
+app.post("/todos", (req, res) => {
+  let todo = new Todo({
+    text: req.body.text
+  });
+
+  todo.save().then((document) => {
+    res.status(201).send(document);
+  }).catch((e) => {
+    res.status(400).send(e);
+  });
+});
 
 //INDEX
 
